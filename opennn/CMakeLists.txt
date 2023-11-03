@@ -18,6 +18,7 @@ target_include_directories(${PROJECT_NAME}
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${HEADERS}")
 
 install(TARGETS opennn
+    EXPORT opennnTargets
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin
@@ -41,3 +42,4 @@ install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/opennnConfigVersion.cmake"
     DESTINATION cmake
 )
+install(EXPORT opennnTargets DESTINATION cmake)
